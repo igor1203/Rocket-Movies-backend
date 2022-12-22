@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+const createUsers = `
+CREATE TABLE IF NOT EXISTS users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR,
+  email VARCHAR,
+  password VARCHAR,
+  avatar VARCHAR NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+`;
+
+=======
+const createUsers = `
+CREATE TABLE IF NOT EXISTS users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR,
+  email VARCHAR,
+  password VARCHAR,
+  avatar VARCHAR NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+`;
+
+>>>>>>> 3125b3a91bf4b598579f28cd797620bb6e8e6d4a
+module.exports = createUsers;
