@@ -4,7 +4,7 @@ const AppError = require("../utils/AppError");
 class NotesController{
   async create(request, response){
     const { title, description, rating, tags } = request.body;
-    const { user_id } = request.params;
+    const  user_id  = request.user.id;
 
     if (rating < 0 || rating > 5) {
       throw new AppError("A nota deve ser entre 0 e 5");
@@ -51,7 +51,9 @@ class NotesController{
   }
 
   async index(request, response){
-    const { title, user_id, tags } = request.query;
+    const { title, tags } = request.query;
+
+    const user_id = request.user.id
     
     let notes;
 
