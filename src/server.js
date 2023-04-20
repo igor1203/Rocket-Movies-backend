@@ -4,6 +4,7 @@ const migrationsRun = require("./database/sqlite/migrations");
 const AppError = require("./utils/AppError");
 const uploadConfig = require("./configs/upload")
 const express = require("express");
+const cors = require("cors")
 
 const routes = require("./routes");
 
@@ -19,7 +20,7 @@ app.use(routes);
 
 app.use(( error, request, response, next ) => {
   if(error instanceof AppError) {
-    return response.status(error.statusCode).json({
+    return response.status(err.statusCode).json({
       status: "error",
       message: err.message
     });
